@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  database:
+    image: mariadb
+    volumes:
+    - ${DB_PATH}:/var/lib/mysql
+    ports:
+    - 510:3306
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: root
+  site:
+    build: ./
+    ports:
+    - 500:80
+    expose:
+    - 500
+    volumes:
+    - ./:/usr/share/nginx/html
+    links:
+    - database
