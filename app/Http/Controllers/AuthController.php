@@ -13,6 +13,10 @@ use \App\Models\User;
 class AuthController extends BaseController
 {
     public function login(Request $request) {
+        if (Auth::check()) {
+            return response()->redirectTo('/');
+        }
+
         if ($request->method() === "GET") {
             return view('login');
         }
@@ -24,9 +28,13 @@ class AuthController extends BaseController
 
         if (!is_null($user)) {
             if (password_verify($password, $user->password)) {
-                Auth::login();
+                Auth::login($user);
 
-                return response()->redirectTo('/dashboard');
+                return response()->json([
+                    'error' => false,
+                    'message' => 'login_succees',
+                    'redirect' => '/dashboard'
+                ]);
             }
 
             return response()->json([

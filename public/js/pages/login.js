@@ -11,7 +11,13 @@ if (form !== null) {
             email,
             password,
         })
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
+        .then(res => {
+            if (typeof res.data.redirect !== 'undefined') {
+                window.location.href = res.data.redirect;
+            }
+        })
+        .catch(({ response }) => {
+            alert(response.data.message);
+        });
     });
 }

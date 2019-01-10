@@ -19,3 +19,15 @@ Route::group(['prefix' => '/login'], function() {
     Route::get('/', 'AuthController@login');
     Route::post('/', 'AuthController@login');
 });
+
+Route::group(['middleware' => 'auth.camonapp'], function() {
+    Route::get('/dashboard', 'DashboardController@index');
+
+    Route::group(['prefix' => '/experiences'], function() {
+        Route::get('/', 'ExperiencesController@index');
+        Route::post('/', 'ExperiencesController@store');
+        Route::get('/create', 'ExperiencesController@create');
+    });
+});
+
+Route::get('/experiences/{experience}', 'ExperiencesController@show');
