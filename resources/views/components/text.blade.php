@@ -1,5 +1,5 @@
 @php
-    $props = (new App\Services\ObjectService\Sphere())->get();
+    $props = (new App\Services\ObjectService\Text())->get();
     $index = 0;
 @endphp
 

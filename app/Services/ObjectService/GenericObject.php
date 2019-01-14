@@ -8,7 +8,7 @@ abstract class GenericObject {
     protected $data;
 
     public function __construct() {
-        $this->path = storage_path() . '/app/public/objects/';
+        $this->path = public_path() . '/objects/';
     }
 
     protected function structure() {
@@ -44,6 +44,7 @@ abstract class GenericObject {
 
         foreach ($this->data as $key => $value) {
             if ($this->isModified($key, $value)) {
+                $key = str_replace("_", "-", $key);
                 $props .= " {$key}=\"{$value}\"";
             }
         }

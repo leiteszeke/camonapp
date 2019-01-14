@@ -12,6 +12,6 @@ use Illuminate\Support\Facades\Auth;
 class DashboardController extends BaseController
 {
     public function index(Request $request) {
-
+        return view('dashboard/index');
     }
 }

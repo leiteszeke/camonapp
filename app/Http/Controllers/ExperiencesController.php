@@ -9,7 +9,9 @@ use App\Models\Experience;
 class ExperiencesController extends BaseController
 {
     public function index() {
-        return view('experiences.index');
+        $experiences = Experience::get();
+
+        return view('experiences.index', compact('experiences'));
     }
 
     public function show(Experience $experience) {

@@ -4,7 +4,7 @@
     <form id="experienceForm" enctype="multipart/form-data">
         <div class="form-group">
             <label class="control-label">Titulo</label>
-            <input class="form-control-sm form-control" name="title" type="text" />
+            <input class="form-control-sm form-control" name="title" type="text" required />
         </div>
         <div class="form-group">
             <label class="control-label">Descripcion</label>
@@ -63,17 +63,53 @@
         </div>
         <div class="form-inline form-group col-md-12 no-padding-left">
             <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="objects[type]" id="object_select_2" value="box" />
+                <label class="form-check-label" for="objects[type]">Caja</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="objects[type]" id="object_select_4" value="cylinder" />
+                <label class="form-check-label" for="objects[type]">Cilindro</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="objects[type]" id="object_select_5" value="circle" />
+                <label class="form-check-label" for="objects[type]">Círculo</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="objects[type]" id="object_select_3" value="cone" />
+                <label class="form-check-label" for="objects[type]">Cono</label>
+            </div>
+            <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="objects[type]" id="object_select_1" value="sphere" />
                 <label class="form-check-label" for="objects[type]">Esfera</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="objects[type]" id="object_select_2" value="box" />
-                <label class="form-check-label" for="objects[type]">Caja</label>
+                <input class="form-check-input" type="radio" name="objects[type]" id="object_select_6" value="text" />
+                <label class="form-check-label" for="objects[type]">Texto</label>
             </div>
+        </div>
+
+        <div data-object data-is="box" class="hidden">
+            @component('components.box') @endcomponent
+        </div>
+
+        <div data-object data-is="circle" class="hidden">
+            @component('components.circle') @endcomponent
+        </div>
+
+        <div data-object data-is="cone" class="hidden">
+            @component('components.cone') @endcomponent
+        </div>
+
+        <div data-object data-is="cylinder" class="hidden">
+            @component('components.cylinder') @endcomponent
         </div>
 
         <div data-object data-is="sphere" class="hidden">
             @component('components.sphere') @endcomponent
+        </div>
+
+        <div data-object data-is="text" class="hidden">
+            @component('components.text') @endcomponent
         </div>
 
         <div class="form-inline margin-bottom">

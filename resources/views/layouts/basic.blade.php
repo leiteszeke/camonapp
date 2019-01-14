@@ -6,9 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Administrador</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
         <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" />
@@ -20,8 +18,8 @@
 
     <body>
         <nav class="nav">
-            <a class="nav-link" href="#">Dashboard</a>
-            <a class="nav-link" href="#">Experiencias</a>
+            <a class="nav-link" href="{{ URL::to('/dashboard') }}">Dashboard</a>
+            <a class="nav-link" href="{{ URL::to('/experiences') }}">Experiencias</a>
         </nav>
 
         <section class="wrapper closed">

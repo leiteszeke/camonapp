@@ -86,7 +86,7 @@ if (form !== null) {
             config: { headers: {'Content-Type': 'multipart/form-data' }}
         })
         .then(function (response) {
-            console.log(response);
+            window.location.href = '/experiences';
         })
         .catch(function (response) {
             console.log(response);

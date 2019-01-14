@@ -42,3 +42,10 @@ label.custom-file-label {
 .hidden {
     display: none;
 }
+
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+}
